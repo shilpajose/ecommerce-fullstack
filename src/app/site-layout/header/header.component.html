@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg pt-3 sticky-top" style="background-color: #e6ffe6;">
+    <div class="container px-4 px-lg-5">
+      <div class="waviy"><a href="">
+        <span style="--i:1">D</span>
+        <span style="--i:2">A</span>
+        <span style="--i:3">I</span>
+        <span style="--i:4">L</span>
+        <span style="--i:5">Y</span>
+        <span class="ms-5" style="--i:6">F</span>
+        <span style="--i:7">R</span>
+        <span style="--i:8">E</span>
+        <span style="--i:9">S</span>
+        <span style="--i:10">H</span>
+      </a>
+       </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+              <li class="nav-item ms-5"><a class="nav-link" id="addpro" href="products/add-products">Add Products</a></li>
+              <div class="search-box">
+                <button class="btn-search text-success"><i class="fas fa-search"></i></button>
+                <input [(ngModel)]="searchData" (keyup)="accessData($event)" id="s1" type="text" class="input-search text-success" placeholder="Type to Search..." name="search">
+              </div>
+           </ul>
+      </div>
+      <!-- <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary">Left</button>
+        <button type="button" class="btn btn-secondary">Middle</button>
+        <button type="button" class="btn btn-secondary">Right</button>
+      </div> -->
+           <i id="cart" class="fa-solid fa-cart-shopping fa-beat-fade"></i>
+         </div>
+</nav>
+

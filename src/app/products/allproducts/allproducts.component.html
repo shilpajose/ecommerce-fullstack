@@ -1,0 +1,96 @@
+<!-- Header-->
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+            <img src="https://i.postimg.cc/HswZw5Fb/organic-fruits-and-vegetables-n9ngn5npk3b5sg59.jpg" class="d-block w-100" alt="..."
+                style="height: 450px;">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Fresh vegetables</h1>
+                <p style="font-size: 30px;">Pestiside free</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://i.postimg.cc/wvFJxqry/fruit.jpg" class="d-block w-100" alt="..." style="height: 450px;">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Fresh Fruits</h1>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://i.postimg.cc/FspbFx2C/milk.jpg" class="d-block w-100" alt="..." style="height: 450px;">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Natural Milk</h1>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://i.postimg.cc/Y9BLz45m/hen.jpg" class="d-block w-100" alt="..." style="height: 450px;">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Fresh Eggs</h1>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://i.postimg.cc/Kz9FvwDv/harvested-milkfish.jpg" class="d-block w-100" alt="..." style="height: 450px;">
+            <div class="carousel-caption d-none d-md-block">
+                <h1 >Fresh Fish</h1>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- category block -->
+<div class="container mt-5">
+<div class="row text-center ms-5">
+    <div (click)="categoryProduct('')" class="col-3" style="height: 70%;width: 15%;background-color: rgb(127, 88, 235);">
+        <h5 class="mt-1 text-white">All Items</h5>
+    </div>
+<div (click)="categoryProduct(1)" class="col-3" style="height: 70%;width: 15%;background-color: aquamarine;">
+    <h5 class="mt-1 text-white">Vegetables</h5>
+</div>
+<div (click)="categoryProduct(2)" class="col-3" style="height: 70%;width: 15%;background-color: rgb(148, 211, 13);">
+    <h5 class="mt-1 text-white">Fruits </h5>
+</div>
+<div (click)="categoryProduct(3)" class="col-3" style="height: 70%;width: 15%;background-color: rgb(215, 31, 236);">
+    <h5 class="mt-1 text-white">Dairy Products</h5>
+</div>
+<div (click)="categoryProduct(4)" class="col-3" style="height: 70%;width: 15%;background-color: rgb(229, 182, 13);">
+    <h5 class="mt-1 text-white">Fishes</h5>
+</div>
+<div (click)="categoryProduct(5)" class="col-3" style="height: 70%;width: 15%;background-color: rgb(239, 24, 24);">
+    <h5 class="mt-1 text-white">Meat</h5>
+</div>
+</div>
+</div>
+<!-- Section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div *ngFor="let i of categoryProducts | search:searchString :'productName' " class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src={{i.productImg}} alt="..." style="height: 200px;"/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{i.productName}}</h5>
+                            <p>{{i.description}}</p>
+                            <!-- Product price-->{{i.quantity}} 
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                            {{i.price}} /-
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-success mt-auto" href="products/view-products/{{i.id}}">View</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

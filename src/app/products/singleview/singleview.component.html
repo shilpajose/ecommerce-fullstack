@@ -1,0 +1,29 @@
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img style="height: 400px;" class="card-img-top mb-5 mb-md-0"
+                 src={{pdata.productImg}} alt="..." /><br>
+                <img src={{pdata.img1}} alt="" style="height: 100px;">
+                <img src={{pdata.img2}} alt="" style="height: 100px;"></div>
+            <div class="col-md-6">
+                <div class="small mb-1"></div>
+                <h1 class="display-5 fw-bolder">{{pdata.productName}}</h1>
+                <p class="lead">{{pdata.description}}</p>
+                <p class="lead">{{pdata.quantity}}</p>
+                <div class="fs-5 mb-5">
+                    <span class="text-decoration-line-through"><i class="fa-solid fa-indian-rupee-sign"></i>900</span>
+                    <span class="ms-4"> <i class="fa-solid fa-indian-rupee-sign"></i>{{pdata.price}}</span>
+                </div>
+                <div class="d-flex">
+                    <!-- <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                    <button class="btn btn-outline-success flex-shrink-0" type="button">
+                        <i class="bi-cart-fill me-1"></i>
+                        Add to cart
+                    </button> -->
+                    <button class="btn btn-outline-info w-25 ps-2 pe-2"><a style="text-decoration: none;" href="products/edit-products/{{pdata.id}}">Edit</a></button>
+                    <button class="btn btn-outline-danger ms-5 w-25 ps-2 pe-2" (click)="deleteProduct()">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

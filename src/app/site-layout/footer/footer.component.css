@@ -1,0 +1,10 @@
+#contact_details{
+color: green;
+}
+@media only screen and(max-width:767px){
+    #contact_details{
+        color: red;
+       position: absolute;
+       left: 50%;
+    }
+}

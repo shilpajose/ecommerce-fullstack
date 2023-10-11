@@ -1,0 +1,81 @@
+<div>
+    <div class="container w-75 bg-body-secondary m-5 p-5">
+        <form (ngSubmit)="update()" class="row g-3">
+            <h4 class="fs-5 fw-3 text-center text-secondary">Edit Product</h4>
+            <div class="col-md-6">
+                <label for="pname" class="form-label">Product Name</label>
+                <input [(ngModel)]="pdata.productName" type="text" class="form-control" id="pname" name="productName">
+            </div>
+            <div class="col-md-6">
+                <label for="price" class="form-label">Price</label>
+                <input  [(ngModel)]="pdata.price" type="text" class="form-control" id="price" name="price">
+            </div>
+            <div class="col-md-6">
+                <label for="Description" class="form-label">Description</label>
+                <input [(ngModel)]="pdata.description" type="text" class="form-control" id="Description" name="description" placeholder="Add description">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="imgFile">Upload Image</label>
+                <input [(ngModel)]="pdata.productImg" type="text" class="form-control" id="imgFile" name="productImg" />
+            </div>
+            <div class="col-md-6">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input [(ngModel)]="pdata.quantity" type="text" class="form-control" id="quantity" name="quantity">
+            </div>
+            <div class="col-md-6">
+                <label for="vendor" class="form-label">Vendor Name</label>
+                <input [(ngModel)]="pdata.vendor_name" type="text" class="form-control" id="vendor" name="vendor_name">
+            </div>
+            <div class="col-md-6">
+                <label for="inputState" class="form-label">Category</label>
+                <input [(ngModel)]="pdata.categoryId" type="text" formControlName="categoryId" id="inputState" class="form-control" name="categoryId">
+
+                <!-- <select [(ngModel)]="pdata.categoryId" id="inputState" class="form-select" name="categoryId">
+                    <option selected>Choose...</option>
+                    <option>Vegetable</option>
+                    <option>Fruits</option>
+                    <option>Dairy Products</option>
+                    <option>Fish</option>
+                    <option>Meat</option>
+                </select> -->
+            </div>
+
+            <div class="col-md-6">
+                <label for="is_available" class="form-label">Status</label>
+                <select [(ngModel)]="pdata.is_available" id="is_available" class="form-select" name="is_available">
+                    <option selected>Choose...</option>
+                    <option>Available</option>
+                    <option>Not Available</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="rating" class="form-label">Rating</label>
+                <select [(ngModel)]="pdata.rating" id="rating" class="form-select" name="rating">
+                    <option selected>Choose...</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="Review" class="form-label">Review</label>
+                <select [(ngModel)]="pdata.review" id="Review" class="form-select" name="review">
+                    <option selected>Choose...</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-outline-primary">Update</button>
+            </div>
+        </form>
+    </div>
+
+</div>

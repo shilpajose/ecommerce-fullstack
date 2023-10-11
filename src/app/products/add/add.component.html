@@ -1,0 +1,96 @@
+<div>
+    <div class="container w-75 bg-body-secondary m-5 p-5">
+        <form (ngSubmit)="addproduct()" [formGroup]="addFormModel" class="row g-3">
+            <h4 class="fs-5 fw-3 text-center text-secondary">Add New Product</h4>
+            <div class="col-md-6">
+                <label for="id" class="form-label">Id</label>
+                <input formControlName="id" type="number" class="form-control" id="id">
+                <div *ngIf="this.addFormModel.get('id')?.errors&&this.addFormModel.get('id')?.touched"><p class="text-danger text-center">* Include Id</p>  </div>
+            </div>
+  
+            <div class="col-md-6">
+              <label for="pname" class="form-label">Product Name</label>
+              <input  formControlName="productName" type="text" class="form-control" id="pname">
+              <p *ngIf="this.addFormModel.get('productName')?.errors&&this.addFormModel.get('productName')?.touched" class="text-danger text-center">* Include Product Name</p>
+            </div>
+            <div class="col-md-6">
+              <label for="price" class="form-label">Price</label>
+              <input  formControlName="price" type="text" class="form-control" id="price">
+              <p *ngIf="this.addFormModel.get('price')?.errors&&this.addFormModel.get('price')?.touched" class="text-danger text-center">* Include Price</p>
+            </div>
+            <div class="col-md-6">
+              <label for="description" class="form-label">description</label>
+              <input  formControlName="description" type="text" class="form-control" id="description">
+              <p *ngIf="this.addFormModel.get('description')?.errors&&this.addFormModel.get('description')?.touched" class="text-danger text-center">* Include description</p>
+            </div>
+            <div class="col-12">
+                <label class="form-label" for="imgFile">Upload Image</label>
+                <input  formControlName="productImg" type="text" class="form-control"  id="imgFile" />
+                <p *ngIf="this.addFormModel.get('productImg')?.errors&&this.addFormModel.get('productImg')?.touched" class="text-danger text-center"> * Please Upload Image</p>
+            </div>
+            <div class="col-md-6">
+              <label for="quantity" class="form-label">Quantity</label>
+              <input  formControlName="quantity" type="text" class="form-control" id="quantity" name="quantity">
+              <p *ngIf="this.addFormModel.get('quantity')?.errors&&this.addFormModel.get('quantity')?.touched" class="text-danger text-center"> * Please Include Quantity</p>
+            </div>
+            <div class="col-md-6">
+                <label for="vendor" class="form-label">Vendor Name</label>
+                <input  formControlName="vendor_name" type="text" class="form-control" id="vendor">
+                <p *ngIf="this.addFormModel.get('vendor_name')?.errors&&this.addFormModel.get('vendor_name')?.touched" class="text-danger text-center"> * Please Include Vendor Name</p>
+              </div>
+              <div class="col-md-6">
+                <label for="inputState" class="form-label">Category</label>
+                <input type="text" formControlName="categoryId" id="inputState" class="form-control" name="categoryId">
+                <!-- <select formControlName="category" id="inputState" class="form-select">
+                  <option selected>Choose...</option>
+                  <option>Vegetable</option>
+                  <option>Fruits</option>
+                  <option>Dairy Products</option>
+                  <option>Fish</option>
+                  <option>Meat</option>
+                </select> -->
+                <p *ngIf="this.addFormModel.get('categoryId')?.errors&&this.addFormModel.get('categoryId')?.touched" class="text-danger text-center"> * Please Include Category</p>
+              </div>
+
+              <div class="col-md-6">
+                <label for="is_available" class="form-label">Status</label>
+                <select  formControlName="is_available" id="is_available" class="form-select">
+                  <option selected>Choose...</option>
+                  <option>Available</option>
+                  <option>Not Available</option>
+                </select>
+                <p *ngIf="this.addFormModel.get('is_available')?.errors&&this.addFormModel.get('is_available')?.touched" class="text-danger text-center"> * Please Include Status</p>
+              </div>
+            <div class="col-md-6">
+              <label for="rating" class="form-label">Rating</label>
+              <select  formControlName="rating" id="rating" class="form-select">
+                <option selected>Choose...</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              <p *ngIf="this.addFormModel.get('rating')?.errors&&this.addFormModel.get('rating')?.touched" class="text-danger text-center"> * Please Include Rating</p>
+            </div>
+
+            <div class="col-md-6">
+              <label for="Review" class="form-label">Review</label>
+              <select  formControlName="review" id="Review" class="form-select">
+                <option selected>Choose...</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              <p *ngIf="this.addFormModel.get('review')?.errors&&this.addFormModel.get('review')?.touched" class="text-danger text-center"> * Please add review</p>
+            </div>
+
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-outline-primary">Add</button>
+            </div>
+          </form>
+    </div>
+    
+</div>
